@@ -1,6 +1,6 @@
-    BACK
+- [x] BACK
+    - [x] initial setup
+    - [x] connect to db
+    - [] 
 
-- [x] initial setup
-- [x] connect to db
-
-    FRONT
+- [ ] FRONT
