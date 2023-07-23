@@ -1,13 +1,14 @@
 - [x] BACK
-    - [x] initial setup
-    - [x] connect to db
-    - [x] create models 
-    - [x] create data.json 
-    - [x] import data into db collection
-    - [x] upload images 
-    - [ ] routes
+  - [x] initial setup
+  - [x] connect to db
+  - [x] create models
+  - [x] create data.json
+  - [x] import data into db collection
+  - [x] upload images
+  - [x] routes
 
 - [ ] FRONT
-     - [x] initial setup w/vite
-     - [ ] add styles
-     - [ ] add routing 
+  - [x] initial setup w/vite
+  - [ ] add styles
+  - [x] add routing
+  - [ ] fetch data from server
