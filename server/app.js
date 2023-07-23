@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 dotenv.config()
 const cors = require('cors')
-const mongoUrl = process.env.MONGO_URL
+const mongoUri = process.env.MONGO_URI
 const port = process.env.PORT || 4444
 
 app.use(cors())
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 async function start() {
   try {
-    await mongoose.connect(mongoUrl)
+    await mongoose.connect(mongoUri)
     app.listen(port, () => console.log(`App listening on port ${port}`))
     console.log('Connected to DB')
   } catch (error) {
