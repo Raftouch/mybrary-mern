@@ -6,9 +6,12 @@
   - [x] import data into db collection
   - [x] upload images
   - [x] routes
+  - [ ]
 
 - [ ] FRONT
   - [x] initial setup w/vite
-  - [ ] add styles
+  - [x] add styles
   - [x] add routing
-  - [ ] fetch data from server
+  - [x] fix cors issue
+  - [x] fetch data from server
+  - [ ]
