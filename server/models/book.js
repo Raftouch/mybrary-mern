@@ -9,7 +9,7 @@ const bookSchema = new mongoose.Schema({
     type: String,
   },
   category: {
-    type: String,
+    type: Array,
   },
   description: {
     type: String,
