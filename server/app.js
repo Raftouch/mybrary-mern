@@ -11,9 +11,7 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  res.json('Hello mate')
-})
+app.use('/', require('./routes/book'))
 
 async function start() {
   try {
