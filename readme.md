@@ -8,3 +8,6 @@
     - [ ] routes
 
 - [ ] FRONT
+     - [x] initial setup w/vite
+     - [ ] add styles
+     - [ ] add routing 
