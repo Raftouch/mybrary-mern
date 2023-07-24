@@ -14,8 +14,17 @@ router.get('/api/books', async (req, res) => {
       filter.category = category
     }
 
-    const data = await Book.find(filter)
-    res.json(data)
+    const books = await Book.find(filter)
+    res.json(books)
+  } catch (error) {
+    res.status(500).json({ message: 'Unexpected error occured' })
+  }
+})
+
+router.get('/api/books/:slug', async (req, res) => {
+  try {
+    const book = await Book.findOne({ slug: req.params.slug })
+    res.json(book)
   } catch (error) {
     res.status(500).json({ message: 'Unexpected error occured' })
   }

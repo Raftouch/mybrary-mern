@@ -19,4 +19,5 @@
   - [ ] BACK & FRONT
 
 - [x] add search by category
-- [ ] get details by id/slug
+- [x] get book
+- [ ] edit book

@@ -6,25 +6,26 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
-} from "react-router-dom";
+} from 'react-router-dom'
 import './index.css'
-import HomePage from './pages/HomePage.jsx';
-import AboutPage from './pages/AboutPage.jsx';
-import BookPage from './pages/BookPage.jsx';
+import HomePage from './pages/HomePage.jsx'
+import AboutPage from './pages/AboutPage.jsx'
+import BookPage from './pages/BookPage.jsx'
+import DetailsPage from './pages/DetailsPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} element={<HomePage />} />
-      <Route path='/about' element={<AboutPage />} />
-      <Route path='/books' element={<BookPage />} />
-      
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/books" element={<BookPage />} />
+      <Route path="/books/:slug" element={<DetailsPage />} />
     </Route>
   )
-);
+)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+  </React.StrictMode>
 )

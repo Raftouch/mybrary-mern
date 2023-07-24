@@ -34,8 +34,11 @@ function BookPage() {
   return (
     <>
       <div className="h-[80px] z-10 fixed flex items-center gap-5">
-        <label className='text-white'>Category</label>
-        <select className='py-2 px-4 rounded-full' onChange={(e) => setCategory(e.target.value)}>
+        <label className="text-white">Category</label>
+        <select
+          className="py-2 px-4 rounded-full"
+          onChange={(e) => setCategory(e.target.value)}
+        >
           <option value="">All</option>
           <option value="fiction">Fiction</option>
           <option value="roman">Roman</option>
