@@ -1,4 +1,5 @@
 - [x] BACK
+
   - [x] initial setup
   - [x] connect to db
   - [x] create models
@@ -6,12 +7,16 @@
   - [x] import data into db collection
   - [x] upload images
   - [x] routes
-  - [ ]
 
-- [ ] FRONT
+- [x] FRONT
+
   - [x] initial setup w/vite
   - [x] add styles
   - [x] add routing
   - [x] fix cors issue
   - [x] fetch data from server
-  - [ ]
+
+  - [ ] BACK & FRONT
+
+- [x] add search by category
+- [ ] get details by id/slug

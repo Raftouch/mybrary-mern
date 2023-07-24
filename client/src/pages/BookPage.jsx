@@ -5,11 +5,17 @@ function BookPage() {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [category, setCategory] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/books')
+        let url = 'http://localhost:4000/api/books'
+        if (category) {
+          url += `?category=${category}`
+        }
+
+        const response = await fetch(url)
         if (!response.ok) {
           throw new Error('Failed to fetch data')
         }
@@ -23,10 +29,25 @@ function BookPage() {
       }
     }
     fetchData()
-  }, [])
+  }, [category])
 
   return (
     <>
+      <div className="h-[80px] z-10 fixed flex items-center gap-5">
+        <label className='text-white'>Category</label>
+        <select className='py-2 px-4 rounded-full' onChange={(e) => setCategory(e.target.value)}>
+          <option value="">All</option>
+          <option value="fiction">Fiction</option>
+          <option value="roman">Roman</option>
+          <option value="policier">Policier</option>
+          <option value="conte philosophique">Conte philosophique</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="satire">Satire</option>
+          <option value="roman historique">Roman historique</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
       {isLoading ? (
         <p className="pt-28">Data is loading...</p>
       ) : error ? (
