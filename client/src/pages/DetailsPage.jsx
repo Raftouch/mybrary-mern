@@ -23,7 +23,8 @@ function DetailsPage() {
     fetchData()
   }, [urlSlug.slug])
 
-  function StarRating({ numberOfStars }) {
+  function StarRating(prop) {
+    let { numberOfStars } = prop
     const stars = []
 
     for (let i = 0; i < numberOfStars; i++) {
@@ -40,8 +41,8 @@ function DetailsPage() {
           src={`http://localhost:4000/uploads/${data.thumbnail}`}
           alt={data.title}
         />
-        <div className='flex flex-col gap-3 max-w-[500px]'>
-          <h1 className='uppercase font-bold'>{data.title}</h1>
+        <div className="flex flex-col gap-3 max-w-[500px]">
+          <h1 className="uppercase font-bold">{data.title}</h1>
           <p>{data.description}</p>
           <StarRating numberOfStars={data.stars} />
           <p>Category:</p>

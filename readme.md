@@ -19,5 +19,5 @@
   - [ ] BACK & FRONT
 
 - [x] add search by category
-- [x] get book
-- [ ] edit book
+- [x] get book routes
+- [ ] edit book routes
