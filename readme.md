@@ -16,9 +16,9 @@
   - [x] fix cors issue
   - [x] fetch data from server
 
-  - [ ] BACK & FRONT
+- [ ] BACK & FRONT
 
-- [x] add search by category
-- [x] get book routes
-- [ ] add new book
-- [ ] edit book routes
+  - [x] add search by category
+  - [x] get book/s route
+  - [x] add new book route
+  - [ ] edit book route
