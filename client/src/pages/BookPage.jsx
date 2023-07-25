@@ -51,6 +51,10 @@ function BookPage() {
         </select>
       </div>
 
+      <Link className="pt-28" to="/books/new">
+        + Add New Book
+      </Link>
+
       {isLoading ? (
         <p className="pt-28">Data is loading...</p>
       ) : error ? (

@@ -36,11 +36,14 @@ function DetailsPage() {
   return (
     <>
       <div className="pt-28 flex flex-wrap gap-10 justify-center">
-        <img
-          className="w-[312px] h-[500px]"
-          src={`http://localhost:4000/uploads/${data.thumbnail}`}
-          alt={data.title}
-        />
+        <div>
+          <img
+            className="w-[312px] h-[500px]"
+            src={`http://localhost:4000/uploads/${data.thumbnail}`}
+            alt={data.title}
+          />
+          <Link to={`/edit/${data.slug}`}>Edit</Link>
+        </div>
         <div className="flex flex-col gap-3 max-w-[500px]">
           <h1 className="uppercase font-bold">{data.title}</h1>
           <p>{data.description}</p>

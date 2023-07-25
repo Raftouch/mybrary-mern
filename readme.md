@@ -20,4 +20,5 @@
 
 - [x] add search by category
 - [x] get book routes
+- [ ] add new book
 - [ ] edit book routes

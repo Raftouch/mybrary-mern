@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Book = require('../models/book')
+const multer = require('multer')
 
 router.get('/', (req, res) => {
   res.json('Hello mate')
@@ -25,6 +26,39 @@ router.get('/api/books/:slug', async (req, res) => {
   try {
     const book = await Book.findOne({ slug: req.params.slug })
     res.json(book)
+  } catch (error) {
+    res.status(500).json({ message: 'Unexpected error occured' })
+  }
+})
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9)
+    cb(null, uniqueSuffix + '-' + file.originalname)
+  },
+})
+
+const upload = multer({ storage: storage })
+
+router.post('/api/books', upload.single('thumbnail'), async (req, res) => {
+  try {
+    const { title, slug, category, description, stars } = req.body
+
+    const book = new Book({
+      title,
+      slug,
+      category,
+      description,
+      stars,
+      thumbnail: req.file.filename,
+    })
+
+    await Book.create(book)
+
+    res.json('Data submitted')
   } catch (error) {
     res.status(500).json({ message: 'Unexpected error occured' })
   }
