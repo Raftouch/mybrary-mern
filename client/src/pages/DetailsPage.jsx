@@ -42,7 +42,7 @@ function DetailsPage() {
             src={`http://localhost:4000/uploads/${data.thumbnail}`}
             alt={data.title}
           />
-          <Link to={`/edit/${data.slug}`}>Edit</Link>
+          <Link to={`/books/edit/${data.slug}`}>Edit</Link>
         </div>
         <div className="flex flex-col gap-3 max-w-[500px]">
           <h1 className="uppercase font-bold">{data.title}</h1>

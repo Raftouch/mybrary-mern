@@ -21,4 +21,5 @@
   - [x] add search by category
   - [x] get book/s route
   - [x] add new book route
-  - [ ] edit book route
+  - [ ] edit book route (fix bug)
+  - [x] delete book route

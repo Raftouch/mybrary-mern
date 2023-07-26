@@ -13,6 +13,7 @@ import AboutPage from './pages/AboutPage.jsx'
 import BookPage from './pages/BookPage.jsx'
 import DetailsPage from './pages/DetailsPage.jsx'
 import CreateBook from './pages/CreateBook.jsx'
+import EditBook from './pages/EditBook.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route path="/books" element={<BookPage />} />
       <Route path="/books/:slug" element={<DetailsPage />} />
       <Route path="/books/new" element={<CreateBook />} />
+      <Route path="/books/edit/:slug" element={<EditBook />} />
     </Route>
   )
 )

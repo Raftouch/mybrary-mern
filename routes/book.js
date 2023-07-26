@@ -64,4 +64,39 @@ router.post('/api/books', upload.single('thumbnail'), async (req, res) => {
   }
 })
 
+router.put('/api/books', upload.single('thumbnail'), async (req, res) => {
+  try {
+    const { title, slug, category, description, stars, bookId } = req.body
+
+    const book = {
+      title,
+      slug,
+      category,
+      description,
+      stars,
+    }
+
+    if (req.file) {
+      book.thumbnail = req.file.filename
+    }
+
+    await Book.findByIdAndUpdate(bookId, book)
+
+    res.json('Book updated')
+  } catch (error) {
+    res.status(500).json({ message: 'Unexpected error occured' })
+  }
+})
+
+router.delete('/api/books/:id', async (req, res) => {
+  const bookId = req.params.id
+
+  try {
+    await Book.deleteOne({ _id: bookId })
+    res.json('Book with id' + req.body.bookId + 'was successfully deleted')
+  } catch (error) {
+    console.log(error)
+  }
+})
+
 module.exports = router
