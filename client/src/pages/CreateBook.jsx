@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import noImageSelected from '../assets/noImageSelected.jpg'
+import { Link } from 'react-router-dom'
 
 function CreateBook() {
   const [title, setTitle] = useState('')
@@ -56,11 +57,21 @@ function CreateBook() {
       <h1 className="text-center mb-10">CreateBook</h1>
 
       {submitted ? (
-        <p className="pt-28">Book created successfully</p>
+        <div className="flex flex-col">
+          <p className="pt-10 mb-10">Book created successfully</p>
+          <Link
+            className="text-center py-2 px-4 bg-green-950 text-white"
+            to="/books"
+          >
+            Go back to books
+          </Link>
+        </div>
       ) : (
-        <form className="flex" onSubmit={createBook}>
+        <form
+          className="flex flex-wrap gap-10 justify-center mb-10"
+          onSubmit={createBook}
+        >
           <div>
-            <label>Upload Thumbnail</label>
             <img
               className="w-[250px] h-[400px]"
               src={image}
@@ -72,54 +83,61 @@ function CreateBook() {
               accept="image/jpg, image/jpeg, image/png, image/gif"
             />
           </div>
-          <div>
-            <div>
-              <label>Title</label>
-              <input
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </div>
-            <div>
-              <label>Slug</label>
-              <input
-                type="text"
-                value={slug}
-                onChange={(e) => setSlug(e.target.value)}
-              />
-            </div>
-            <div>
-              <label>Stars</label>
-              <input
-                type="text"
-                value={stars}
-                onChange={(e) => setStars(e.target.value)}
-              />
-            </div>
-            <div>
-              <label>Description</label>
-              <textarea
-                rows="4"
-                cols="30"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </div>
-            <div>
-              <label>Categories (comma-separated)</label>
-              <input
-                type="text"
-                value={categories}
-                onChange={handleCategoryChange}
-              />
+          <div className="flex flex-col gap-3 justify-between">
+            <div className="flex flex-col gap-3">
+              <div className="flex justify-between">
+                <label>Title</label>
+                <input
+                  type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+              </div>
+              <div className="flex justify-between">
+                <label>Slug</label>
+                <input
+                  type="text"
+                  value={slug}
+                  onChange={(e) => setSlug(e.target.value)}
+                />
+              </div>
+              <div className="flex justify-between">
+                <label>Stars</label>
+                <input
+                  type="text"
+                  value={stars}
+                  onChange={(e) => setStars(e.target.value)}
+                />
+              </div>
+              <div className="flex flex-col">
+                <label>Description</label>
+                <textarea
+                  rows="4"
+                  cols="30"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </div>
+              <div className="flex flex-col">
+                <label>Categories (comma-separated)</label>
+                <input
+                  type="text"
+                  value={categories}
+                  onChange={handleCategoryChange}
+                />
+              </div>
             </div>
 
-            <input
-              className="w-full bg-green-950 text-white"
-              type="submit"
-              value="Create"
-            />
+            <div className="flex mt-2 gap-10 ml-auto">
+              <input
+                className="py-2 px-4 ml-auto bg-green-600 text-white"
+                type="submit"
+                value="Create"
+              />
+              <Link className="py-2 px-4 bg-green-950 text-white" to="/books">
+                Cancel
+              </Link>
+            </div>
           </div>
         </form>
       )}

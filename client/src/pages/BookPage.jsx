@@ -60,7 +60,7 @@ function BookPage() {
       ) : error ? (
         <p className="pt-28">{error}</p>
       ) : (
-        <ul className="pt-28 grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-items-center mb-10">
+        <ul className="pt-10 grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-items-center mb-10">
           {data.map((item) => (
             <li key={item._id}>
               <Link to={`/books/${item.slug}`}>
